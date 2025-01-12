@@ -4,31 +4,26 @@ import { getAllTasks, deleteTask } from '../services/taskService';
 const TaskList = ({ onSelectTask, refreshTasks }) => {
   const [tasks, setTasks] = useState([]);
 
-  // Fetch tasks from the backend
   const fetchTasks = () => {
     getAllTasks().then(response => {
       setTasks(response.data.data);
     });
   };
 
-  // Fetch tasks on initial load
   useEffect(() => {
     fetchTasks();
   }, []);
 
-  // Refresh tasks when refreshTasks state changes
   useEffect(() => {
     fetchTasks();
   }, [refreshTasks]);
 
-  // Handle task deletion
   const handleDelete = (id) => {
     deleteTask(id).then(() => {
       setTasks((prevTasks) => prevTasks.filter((task) => task.id !== id));
     });
   };
 
-  // Display priority with Bootstrap badge
   const getPriorityBadge = (priority) => {
     const colors = {
       HIGH: 'danger',
