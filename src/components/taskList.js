@@ -31,7 +31,22 @@ const TaskList = ({ onSelectTask, refreshTasks }) => {
       LOW: 'success'
     };
     return <span className={`badge bg-${colors[priority]}`}>{priority}</span>;
-  };
+    };
+
+  const getStatusBadge = (status) => {
+    const colors = {
+      'TO DO': 'secondary',
+      'IN PROGRESS': 'primary',
+      'DONE': 'success'
+    };
+
+    return (
+    <span className={`badge bg-${colors[status]} text-white`}>
+      {status.replace('_', ' ')}
+    </span>
+  );
+};
+
 
   return (
     <div className="d-flex flex-wrap gap-3">
@@ -41,7 +56,7 @@ const TaskList = ({ onSelectTask, refreshTasks }) => {
             <h5 className="card-title">{task.title}</h5>
             <p className="card-text">{task.description}</p>
             <p>Priority: {getPriorityBadge(task.priority)}</p>
-            <p>Status: <span className="badge bg-secondary">{task.status}</span></p>
+            <p>Status: {getStatusBadge(task.status)}</p>
             <p>Due Date: {task.dueDate ? new Date(task.dueDate).toLocaleDateString() : 'No Due Date'}</p>
             <button onClick={() => onSelectTask(task)} className="btn btn-primary me-2">Edit Task</button>
             <button onClick={() => handleDelete(task.id)} className="btn btn-danger">Delete</button>
