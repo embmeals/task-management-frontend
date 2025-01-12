@@ -38,46 +38,87 @@ const TaskForm = ({ onTaskCreated, existingTask }) => {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
-            <input
-                type="text"
-                className="form-control mb-2"
-                placeholder="Title"
-                value={title}
-                onChange={(e) => setTitle(e.target.value)} required/>
-            <textarea
-                className="form-control mb-2"
-                placeholder="Description"
-                value={description}
-                onChange={(e) => setDescription(e.target.value)}/>
-            <input
-                type="date"
-                className="form-control mb-2"
-                value={dueDate}
-                onChange={(e) => setDueDate(e.target.value)}/>
+        <div className="modal fade show d-block" tabIndex="-1" role="dialog" style={{ backdropFilter: 'blur(5px)' }}>
+            <div className="modal-dialog modal-dialog-centered" role="document">
+                <div className="modal-content">
+                    <div className="modal-header bg-success text-white">
+                        <h5 className="modal-title">{existingTask ? 'Edit Task' : 'Add New Task'}</h5>
+                        <button
+                            type="button"
+                            className="btn-close"
+                            aria-label="Close"
+                            onClick={() => onTaskCreated()}
+                        />
+                    </div>
+                    <div className="modal-body">
+                        <form onSubmit={handleSubmit}>
+                            <div className="form-group mb-3">
+                                <label htmlFor="title" className="form-label">Title</label>
+                                <input
+                                    id="title"
+                                    type="text"
+                                    className="form-control"
+                                    placeholder="Enter task title"
+                                    value={title}
+                                    onChange={(e) => setTitle(e.target.value)}
+                                    required
+                                />
+                            </div>
 
-            <select
-                className="form-select mb-2"
-                value={priority}
-                onChange={(e) => setPriority(e.target.value)}>
-                <option value="LOW">Low</option>
-                <option value="MEDIUM">Medium</option>
-                <option value="HIGH">High</option>
-            </select>
+                            <div className="form-group mb-3">
+                                <label htmlFor="description" className="form-label">Description</label>
+                                <textarea
+                                    id="description"
+                                    className="form-control"
+                                    placeholder="Enter task description"
+                                    value={description}
+                                    onChange={(e) => setDescription(e.target.value)} />
+                            </div>
 
-            <select
-                className="form-select mb-3"
-                value={status}
-                onChange={(e) => setStatus(e.target.value)}>
-                <option value="TO DO">To Do</option>
-                <option value="IN PROGRESS">In Progress</option>
-                <option value="DONE">Done</option>
-            </select>
+                            <div className="form-group mb-3">
+                                <label htmlFor="dueDate" className="form-label">Due Date</label>
+                                <input
+                                    id="dueDate"
+                                    type="date"
+                                    className="form-control"
+                                    value={dueDate}
+                                    onChange={(e) => setDueDate(e.target.value)} />
+                            </div>
 
-            <button type="submit" className="btn btn-success w-100">
-                {existingTask ? 'Update Task' : 'Add Task'}
-            </button>
-        </form>
+                            <div className="form-group mb-3">
+                                <label htmlFor="priority" className="form-label">Priority</label>
+                                <select
+                                    id="priority"
+                                    className="form-control"
+                                    value={priority}
+                                    onChange={(e) => setPriority(e.target.value)}>
+                                    <option value="LOW">Low</option>
+                                    <option value="MEDIUM">Medium</option>
+                                    <option value="HIGH">High</option>
+                                </select>
+                            </div>
+
+                            <div className="form-group mb-4">
+                                <label htmlFor="status" className="form-label">Status</label>
+                                <select
+                                    id="status"
+                                    className="form-control"
+                                    value={status}
+                                    onChange={(e) => setStatus(e.target.value)}>
+                                    <option value="TO DO">To Do</option>
+                                    <option value="IN PROGRESS">In Progress</option>
+                                    <option value="DONE">Done</option>
+                                </select>
+                            </div>
+
+                            <button type="submit" className="btn btn-success w-100">
+                                {existingTask ? 'Update Task' : 'Add Task'}
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
     );
 };
 
