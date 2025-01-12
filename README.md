@@ -4,7 +4,8 @@ https://task-management-frontend-swart-five.vercel.app
 
 ![image](https://github.com/user-attachments/assets/d47f0ad2-abd5-4254-8179-feb7823f85bd) </br>
 
-![image](https://github.com/user-attachments/assets/c6d488f9-0fca-4cea-bcff-5ededee588fb)
+![image](https://github.com/user-attachments/assets/1fc21873-7f29-498c-abff-f8e3417cff71)
+
 
 
 # Getting Started with Create React App
