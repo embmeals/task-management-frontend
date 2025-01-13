@@ -29,8 +29,8 @@
 
 body {
   font-family: 'Poppins', sans-serif;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: 50px;
+  margin-bottom: 50px;
   padding: 0;
   box-sizing: border-box;
   background: var(--bgColor);
@@ -119,6 +119,44 @@ body {
   color: #fff;
 }
 
+.card-header {
+    font-size: 22px;
+    font-weight: 800;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+    margin-bottom: 10px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+    padding-bottom: 5px;
+}
+
+.card-body p span {
+    font-weight: 600;
+    color: #ffffff;
+    display: inline-block;
+    margin-right: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+.card-body p {
+  margin-bottom: 12px;
+  line-height: 1.6;
+  font-size: 16px;
+  color: #eaeaea;
+}
+
+.divider {
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.2);
+  margin: 10px 0;
+  width: 100%;
+}
+
+
 .card:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 40px rgba(0, 0, 0, 0.3);
@@ -204,4 +242,34 @@ button {
 .btn-danger:hover {
   transform: scale(1.05);
   box-shadow: 0 6px 20px rgba(255, 65, 108, 0.6);
+}
+
+.badge {
+  padding: 5px 10px;
+  border-radius: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+  display: inline-block;
+}
+
+hr {
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  margin: 10px 0;
+}
+
+.bg-warning {
+  background-color: #ffc107;
+  color: #212529;
+}
+
+.bg-success {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.button-group {
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
+  margin-top: 15px;
 }
