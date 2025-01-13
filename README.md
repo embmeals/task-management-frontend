@@ -1,10 +1,7 @@
 API working in production setting:
 https://task-management-frontend-swart-five.vercel.app
-![image](https://github.com/user-attachments/assets/d0101bea-296a-41bc-a554-5565661d10c0) </br>
+![image](https://github.com/user-attachments/assets/b73139f0-0490-43f8-b349-e8fa5fc4f535)
 
-![image](https://github.com/user-attachments/assets/d47f0ad2-abd5-4254-8179-feb7823f85bd) </br>
-
-![image](https://github.com/user-attachments/assets/1fc21873-7f29-498c-abff-f8e3417cff71)
 
 
 
