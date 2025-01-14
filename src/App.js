@@ -21,7 +21,11 @@ const App = () => {
         <div className="container">
             <div className="d-flex justify-content-between align-items-center my-4">
                 <h1 className="text-center">Task Management</h1>
-                <button className="btn btn-create" onClick={() => setShowModal(true)}>Create Task</button>
+                <div className="d-flex justify-content-center my-3">
+                    <button className="btn btn-create" onClick={() => setShowModal(true)}>
+                        Create Task
+                    </button>
+                </div>
             </div>
 
             {showModal && (
