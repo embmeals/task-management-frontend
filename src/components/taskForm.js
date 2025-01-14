@@ -9,15 +9,16 @@ const TaskForm = ({ onTaskCreated, existingTask }) => {
     const [status, setStatus] = useState('TO DO');
 
     useEffect(() => {
-            if (existingTask) {
-                setTitle(existingTask.title);
-                setDescription(existingTask.description);
-                setDueDate(existingTask.dueDate ? existingTask.dueDate.split('T')[0] : '');
-                setPriority(existingTask.priority);
-                setStatus(existingTask.status);
-            } else resetForm();
-        },
-        [existingTask]);
+        if (existingTask) {
+            setTitle(existingTask.title);
+            setDescription(existingTask.description);
+            setDueDate(existingTask.dueDate ? existingTask.dueDate.split('T')[0] : '');
+            setPriority(existingTask.priority);
+            setStatus(existingTask.status);
+        }
+        else
+            resetForm();
+    }, [existingTask]);
 
     const resetForm = () => {
         setTitle('');
@@ -50,7 +51,7 @@ const TaskForm = ({ onTaskCreated, existingTask }) => {
             <div className="modal-dialog modal-dialog-centered modal-lg" role="document">
                 <div className="modal-content">
                     <div className="modal-header bg-primary">
-                        <h5 className="modal-title">{existingTask
+                        <h5 className="modal-title text-white">{existingTask
                             ? 'Edit Task'
                             : 'Add New Task'}</h5>
                         <button
@@ -60,7 +61,8 @@ const TaskForm = ({ onTaskCreated, existingTask }) => {
                             onClick={() => {
                                 onTaskCreated();
                                 resetForm();
-                            }} />
+                            }}
+                        />
                     </div>
                     <div className="modal-body overflow-auto">
                         <form onSubmit={handleSubmit}>

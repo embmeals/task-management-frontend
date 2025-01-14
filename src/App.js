@@ -11,6 +11,7 @@ const App = () => {
     const handleTaskCreated = () => {
         setShowModal(false);
         setRefreshTasks(prev => !prev);
+        setSelectedTask(null);
     };
 
     const handleSelectTask = (task) => {
@@ -22,8 +23,13 @@ const App = () => {
         <div>
             <main className="container py-5">
                 <section className="d-flex justify-content-between align-items-center mb-4 flex-column flex-md-row text-center text-md-start">
-                    <h1 className="title-text fw-bold">Tasks</h1>
-                    <button className="btn btn-success btn-lg mt-3 mt-md-0" onClick={() => setShowModal(true)}>
+                    <h1 className="title-text fw-bold">Task Management</h1>
+                    <button
+                        className="btn btn-success btn-lg mt-3 mt-md-0"
+                        onClick={() => {
+                            setSelectedTask(null);
+                            setShowModal(true);
+                        }}>
                         <i className="bi bi-plus-circle me-2"></i>Create Task
                     </button>
                 </section>
@@ -36,7 +42,7 @@ const App = () => {
                     <div className="modal-dialog modal-dialog-centered">
                         <div className="modal-content">
                             <div className="modal-header bg-primary text-white">
-                                <h5 className="modal-title">{selectedTask
+                                <h5 className="modal-title text-white">{selectedTask
                                     ? 'Edit Task'
                                     : 'Create Task'}</h5>
                                 <button
