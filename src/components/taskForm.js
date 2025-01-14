@@ -9,16 +9,16 @@ const TaskForm = ({ onTaskCreated, existingTask }) => {
     const [status, setStatus] = useState('TO DO');
 
     useEffect(() => {
-        if (existingTask) {
-            setTitle(existingTask.title);
-            setDescription(existingTask.description);
-            setDueDate(existingTask.dueDate ? existingTask.dueDate.split('T')[0] : '');
-            setPriority(existingTask.priority);
-            setStatus(existingTask.status);
-        }
-        else
-            resetForm();
-    }, [existingTask]);
+            if (existingTask) {
+                setTitle(existingTask.title);
+                setDescription(existingTask.description);
+                setDueDate(existingTask.dueDate ? existingTask.dueDate.split('T')[0] : '');
+                setPriority(existingTask.priority);
+                setStatus(existingTask.status);
+            } else
+                resetForm();
+        },
+        [existingTask]);
 
     const resetForm = () => {
         setTitle('');
@@ -61,8 +61,7 @@ const TaskForm = ({ onTaskCreated, existingTask }) => {
                             onClick={() => {
                                 onTaskCreated();
                                 resetForm();
-                            }}
-                        />
+                            }} />
                     </div>
                     <div className="modal-body overflow-auto">
                         <form onSubmit={handleSubmit}>
