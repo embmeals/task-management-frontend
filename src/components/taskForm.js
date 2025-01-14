@@ -50,7 +50,9 @@ const TaskForm = ({ onTaskCreated, existingTask }) => {
             <div className="modal-dialog modal-dialog-centered modal-lg" role="document">
                 <div className="modal-content">
                     <div className="modal-header bg-primary text-white">
-                        <h5 className="modal-title">{existingTask ? 'Edit Task' : 'Add New Task'}</h5>
+                        <h5 className="modal-title">{existingTask
+                            ? 'Edit Task'
+                            : 'Add New Task'}</h5>
                         <button
                             type="button"
                             className="btn-close"

@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import 'bootstrap-icons/font/bootstrap-icons.css';
 import TaskList from './components/taskList';
 import TaskForm from './components/taskForm';
 
@@ -21,9 +20,9 @@ const App = () => {
     return (
         <div>
             <main className="container py-5">
-                <section className="d-flex flex-wrap justify-content-between align-items-center mb-4">
-                    <h1 className="text-dark fw-bold mb-3 mb-md-0">Task Management</h1>
-                    <button className="btn btn-success btn-lg w-100 w-md-auto" onClick={() => setShowModal(true)}>
+                <section className="d-flex justify-content-between align-items-center mb-4 flex-column flex-md-row text-center text-md-start">
+                    <h1 className="title-text fw-bold">Task Management</h1>
+                    <button className="btn btn-success btn-lg mt-3 mt-md-0" onClick={() => setShowModal(true)}>
                         <i className="bi bi-plus-circle me-2"></i>Create Task
                     </button>
                 </section>
@@ -32,7 +31,7 @@ const App = () => {
 
             {showModal &&
  (
-                <div className="modal fade show d-block" tabIndex="-1">
+                <div className="modal fade show d-block" tabIndex="-1" style={{ backdropFilter: 'blur(5px)' }}>
                     <div className="modal-dialog modal-dialog-centered">
                         <div className="modal-content">
                             <div className="modal-header bg-primary text-white">
@@ -45,15 +44,14 @@ const App = () => {
                                     onClick={() => {
                                         setShowModal(false);
                                         setSelectedTask(null);
-                                    }}
-                                ></button>
+                                    }}>
+                                </button>
                             </div>
                             <div className="modal-body">
                                 <TaskForm
                                     onTaskCreated={handleTaskCreated}
                                     existingTask={selectedTask}
-                                    onClose={() => setShowModal(false)}
-                                />
+                                    onClose={() => setShowModal(false)}/>
                             </div>
                         </div>
                     </div>

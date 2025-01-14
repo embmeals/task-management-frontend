@@ -9,8 +9,8 @@ body {
 }
 
 .card-header {
-    background: linear-gradient(90deg, #4facfe, #00f2fe);
-    color: #fff;
+    background: linear-gradient(90deg, #ff7e5f, #feb47b);
+    color: #ffffff;
     font-weight: bold;
     font-size: 1.25rem;
     padding: 15px 20px;
@@ -20,6 +20,20 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.title-text {
+    background: white;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    font-weight: 900;
+    letter-spacing: 2px;
+    -webkit-text-stroke: 2px black;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    display: inline-block;
 }
 
 .card-header {
@@ -133,24 +147,26 @@ body {
 .btn-delete:hover { background: linear-gradient(90deg, #ff5858, red); }
 
 .btn-details {
+    background: linear-gradient(90deg, #ff7e5f, #feb47b);
+    color: #fff;
     border: none;
     font-weight: 600;
     border-radius: 8px;
     padding: 8px 20px;
     transition: all 0.3s ease-in-out;
-    background: linear-gradient(90deg, #ff5858, #f09819);
-    color: #fff;
-    box-shadow: 0 2px 2px rgba(255, 88, 88, 0.4);
+    box-shadow: 0 4px 12px rgba(255, 126, 95, 0.3);
 }
 
 .btn-details:hover {
-    background: linear-gradient(90deg, #f09819, #ff5858);
-    box-shadow: 0 6px 25px rgba(255, 88, 88, 0.6);
+    background: linear-gradient(90deg, #feb47b, #ff7e5f);
     transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(255, 126, 95, 0.5);
     color: #fff;
 }
 
 @media (max-width: 576px) {
+    h1 { text-align: center; }
+
     .d-flex {
         flex-direction: column !important;
         align-items: stretch !important;
