@@ -1,25 +1,30 @@
 body {
-    background: linear-gradient(#6596f6, #65dfc9);
+    background: #6596f6;
     box-sizing: border-box;
     display: grid;
     font-family: Poppins, sans-serif;
     margin-bottom: 50px;
     margin-top: 50px;
     overflow: auto;
-    padding: 4px;
-    place-content: center;
 }
 
 .card-header {
-    font-size: 22px;
-    font-weight: 800;
-    color: #ffffff;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
-    margin-bottom: 10px;
-    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
-    padding-bottom: 5px;
+    background: linear-gradient(90deg, #4facfe, #00f2fe);
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.25rem;
+    padding: 15px 20px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-header i {
+    font-size: 1.2rem;
+    margin-right: 10px;
 }
 
 .container {
@@ -40,28 +45,6 @@ body {
     border-radius: 15px;
     border: 1px solid rgba(255, 255, 255, 0.18); 
 }
-
-.btn-create {
-    background: linear-gradient(90deg, #ff7e5f, #feb47b);
-    color: #fff;
-    padding: 10px 20px;
-    border-radius: 8px;
-    font-weight: 600;
-    font-size: 18px;
-    border: none;
-    box-shadow: 0 4px 20px rgba(255, 126, 95, 0.5);
-    transition: all 0.3s ease-in-out;
-    display: block;
-    width: 100%;
-    margin: 20px auto;
-    text-align: center;
-}
-
-    .btn-create:hover {
-        background: linear-gradient(90deg, #feb47b, #ff7e5f);
-        transform: scale(1.05);
-        box-shadow: 0 6px 30px rgba(255, 126, 95, 0.7);
-    }
 
 .card {
     background: rgba(255, 255, 255, 0.2);
@@ -113,18 +96,6 @@ body {
     }
 }
 
-.btn-primary {
-    background: linear-gradient(90deg, #0056b3, #007bff);
-    color: #fff;
-    border-radius: 8px;
-}
-
-.btn-danger {
-    background: linear-gradient(90deg, #b30000, #ff1a1a);
-    color: #fff;
-    border-radius: 8px;
-}
-
 .badge {
     padding: 5px 10px;
     border-radius: 12px;
@@ -132,29 +103,46 @@ body {
     text-transform: uppercase;
 }
 
-.bg-warning {
-    background-color: #ffc107;
-    color: #212529;
+.btn {
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 16px;
+    transition: all 0.3s ease-in-out;
+    border: none;
+    text-transform: capitalize;
+}
+
+.btn-edit {
+    background: linear-gradient(90deg, #4facfe, #00f2fe);
+    color: #fff;
+    box-shadow: 0 4px 15px rgba(79, 172, 254, 0.4);
+}
+
+.btn-edit:hover {
+    background: linear-gradient(90deg, #00f2fe, #4facfe);
+    transform: scale(1.05);
+    box-shadow: 0 6px 25px rgba(79, 172, 254, 0.6);
+}
+
+.btn-delete {
+    background: linear-gradient(90deg, #ff5858, #f09819);
+    color: #fff;
+    box-shadow: 0 4px 15px rgba(255, 88, 88, 0.4);
+}
+
+.btn-delete:hover {
+    background: linear-gradient(90deg, #f09819, #ff5858);
+    transform: scale(1.05);
+    box-shadow: 0 6px 25px rgba(255, 88, 88, 0.6);
 }
 
 .btn-details {
-    background: linear-gradient(90deg, #17A2B8, #138496);
-    color: #ffffff;
-    border: none;
-    box-shadow: 0 4px 12px rgba(23, 162, 184, 0.4);
-    border-radius: 8px;
-    padding: 10px 20px;
+    background-color: #fff;
+    color: black;
+    border: 2px solid white;
     font-weight: 600;
-    transition: all 0.3s ease-in-out;
-}
-
-.btn-details:hover {
-    background: linear-gradient(90deg, #138496, #117a8b);
-    transform: scale(1.05);
-    box-shadow: 0 6px 18px rgba(23, 162, 184, 0.6);
-}
-
-.bg-success {
-    background-color: #28a745;
-    color: #fff;
+    border-radius: 8px;
+    padding: 5px 15px;
+    transition: all 0.3s ease;
 }

@@ -18,21 +18,19 @@ const App = () => {
     };
 
     return (
-        <div className="container">
-            <div className="d-flex justify-content-between align-items-center my-4">
-                <h1 className="text-center">Task Management</h1>
-                <div className="d-flex justify-content-center my-3">
-                    <button className="btn btn-create" onClick={() => setShowModal(true)}>
-                        Create Task
-                    </button>
-                </div>
+        <div className="container py-5">
+            <div className="d-flex justify-content-between align-items-center mb-4">
+                <h1 className="text-dark fw-bold">Task Management</h1>
+                <button className="btn btn-success btn-lg" onClick={() => setShowModal(true)}>
+                    <i className="bi bi-plus-circle me-2"></i>Create Task
+                </button>
             </div>
 
             {showModal && (
                 <div className="modal fade show d-block" tabIndex="-1" style={{ backdropFilter: 'blur(5px)' }}>
                     <div className="modal-dialog modal-dialog-centered">
                         <div className="modal-content">
-                            <div className="modal-header bg-success text-white">
+                            <div className="modal-header bg-primary text-white">
                                 <h5 className="modal-title">{selectedTask ? 'Edit Task' : 'Create Task'}</h5>
                                 <button type="button" className="btn-close" onClick={() => { setShowModal(false); setSelectedTask(null); }}></button>
                             </div>
