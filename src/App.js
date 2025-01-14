@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import 'bootstrap-icons/font/bootstrap-icons.css';
 import TaskList from './components/taskList';
 import TaskForm from './components/taskForm';
 

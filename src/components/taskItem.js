@@ -6,7 +6,7 @@ const TaskItem = ({ task, onSelectTask, onDelete }) => {
     return (
         <div className="card shadow-sm mb-4 border-0">
             <div className="card-header bg-light d-flex justify-content-between align-items-center">
-                <h5 className="mb-0 text-dark fw-semibold text-truncate">{task.title}</h5>
+                <h5 className="mb-0 text-light fw-semibold text-truncate">{task.title}</h5>
                 <button
                     className="btn btn-details btn-sm"
                     type="button"

@@ -65,7 +65,7 @@ const TaskForm = ({ onTaskCreated, existingTask }) => {
                             }}
                         />
                     </div>
-                    <div className="modal-body overflow-auto" style={{ maxHeight: '70vh' }}>
+                    <div className="modal-body overflow-auto">
                         <form onSubmit={handleSubmit}>
                             <div className="row g-3">
                                 <div className="col-md-6">
