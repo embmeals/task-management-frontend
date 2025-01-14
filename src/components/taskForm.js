@@ -49,7 +49,7 @@ const TaskForm = ({ onTaskCreated, existingTask }) => {
         <div className="modal fade show d-block" tabIndex="-1" role="dialog" style={{ backdropFilter: 'blur(5px)' }}>
             <div className="modal-dialog modal-dialog-centered modal-lg" role="document">
                 <div className="modal-content">
-                    <div className="modal-header bg-primary text-white">
+                    <div className="modal-header bg-primary">
                         <h5 className="modal-title">{existingTask
                             ? 'Edit Task'
                             : 'Add New Task'}</h5>

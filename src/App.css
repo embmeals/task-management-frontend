@@ -1,8 +1,10 @@
 body {
-    background: #6596f6;
-    box-sizing: border-box;
+    background: linear-gradient(135deg, #4f83cc, #8ec5fc);
+    background-color: #4f83cc;
+    background-image: url('https://www.transparenttextures.com/patterns/cubes.png');
+    background-blend-mode: overlay;
+    font-family: 'Poppins', sans-serif;
     display: grid;
-    font-family: Poppins, sans-serif;
     margin-bottom: 50px;
     margin-top: 50px;
     overflow: auto;
@@ -37,17 +39,24 @@ body {
 }
 
 .card-header {
-    background: linear-gradient(90deg, #0072ff, #0056b3);
+    background: linear-gradient(90deg, #b39ddb, #9575cd);
     color: #ffffff;
-    font-weight: bold;
-    font-size: 1.25rem;
+    font-weight: 700;
+    font-size: 1.2rem;
     padding: 15px 20px;
     border-top-left-radius: 12px;
     border-top-right-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.card-header h5 {
+    margin: 0;
+    font-weight: 700;
+    color: #ffffff;
+    text-shadow: 0 0 8px rgba(74, 20, 140, 0.4);
 }
 
 .container {
@@ -57,7 +66,7 @@ body {
     background: rgba(255, 255, 255, 0.1);
     border-radius: 20px;
     backdrop-filter: blur(15px);
-    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2), 0 0 20px rgba(79, 131, 204, 0.5);
 }
 
 .glass-effect {

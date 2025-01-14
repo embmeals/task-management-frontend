@@ -21,7 +21,7 @@ const App = () => {
         <div>
             <main className="container py-5">
                 <section className="d-flex justify-content-between align-items-center mb-4 flex-column flex-md-row text-center text-md-start">
-                    <h1 className="title-text fw-bold">Task Management</h1>
+                    <h1 className="title-text fw-bold">Tasks</h1>
                     <button className="btn btn-success btn-lg mt-3 mt-md-0" onClick={() => setShowModal(true)}>
                         <i className="bi bi-plus-circle me-2"></i>Create Task
                     </button>
