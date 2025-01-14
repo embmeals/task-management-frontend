@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import TaskList from './components/taskList';
 import TaskForm from './components/taskForm';
+import 'bootstrap-icons/font/bootstrap-icons.css';
 
 const App = () => {
     const [showModal, setShowModal] = useState(false);

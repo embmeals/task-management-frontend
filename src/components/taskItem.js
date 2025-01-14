@@ -3,6 +3,12 @@ import React from 'react';
 const TaskItem = ({ task, onSelectTask, onDelete }) => {
     const collapseId = `collapse-${task.id}`;
 
+    const priorityClassMap = {
+        High: 'bg-danger',
+        Medium: 'bg-warning text-dark',
+        Low: 'bg-success',
+    };
+
     return (
         <div className="card shadow-sm mb-4 border-0">
             <div className="card-header bg-light d-flex justify-content-between align-items-center">
@@ -21,14 +27,23 @@ const TaskItem = ({ task, onSelectTask, onDelete }) => {
             <div id={collapseId} className="collapse">
                 <div className="card-body bg-light">
                     <p><strong>Description:</strong> {task.description || 'No description provided.'}</p>
-                    <p><strong>Priority:</strong> <span className={`badge ${task.priority === 'High'
-                        ? 'bg-danger'
-                        : task.priority === 'Medium'
-                            ? 'bg-warning text-dark'
-                            : 'bg-success'}`}>{task.priority}</span></p>
-                    <p><strong>Status:</strong> <span className={`badge ${task.status === 'Done'
-                        ? 'bg-success'
-                        : 'bg-secondary'}`}>{task.status}</span></p>
+                    <p><strong>Priority:</strong>
+                        <span className={`mx-2 badge ${task?.priority === 'HIGH'
+                                ? 'bg-danger'
+                                : task?.priority === 'MEDIUM'
+                                    ? 'bg-warning text-dark'
+                                    : 'bg-success'
+                            }`}>{task?.priority}</span>
+                    </p>
+
+                    <p><strong>Status:</strong>
+                        <span className={`mx-2 badge ${task?.status === 'DONE'
+                            ? 'bg-success'
+                            : task?.status === 'IN PROGRESS'
+                                    ? 'bg-warning text-dark'
+                                    : 'bg-secondary'
+                            }`}>{task?.status}</span>
+                    </p>
                     <p><strong>Due Date:</strong> {task.dueDate
                         ? new Date(task.dueDate).toLocaleDateString()
                         : 'No Due Date'}</p>
