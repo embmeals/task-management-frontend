@@ -22,9 +22,18 @@ body {
     align-items: center;
 }
 
-.card-header i {
-    font-size: 1.2rem;
-    margin-right: 10px;
+.card-header {
+    background: linear-gradient(90deg, #0072ff, #0056b3);
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 1.25rem;
+    padding: 15px 20px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .container {
@@ -56,22 +65,19 @@ body {
     overflow: hidden;
 }
 
-    .card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 8px 40px rgba(0, 0, 0, 0.3);
-    }
+.card:hover { box-shadow: 0 8px 40px rgba(0, 0, 0, 0.3); }
 
 .collapse {
     transition: height 0.4s ease, opacity 0.4s ease;
     opacity: 1;
 }
 
-    .collapse:not(.show) {
-        display: block;
-        height: 0;
-        opacity: 0;
-        overflow: hidden;
-    }
+.collapse:not(.show) {
+    display: block;
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+}
 
 .card-header {
     font-size: 20px;
@@ -121,38 +127,32 @@ body {
 
 .btn-edit:hover {
     background: linear-gradient(90deg, #00f2fe, #4facfe);
-    transform: scale(1.05);
     box-shadow: 0 6px 25px rgba(79, 172, 254, 0.6);
 }
 
 .btn-delete {
-    background: linear-gradient(90deg, #ff5858, #f09819);
+    background: linear-gradient(90deg, #ff5858, red);
     color: #fff;
-    box-shadow: 0 4px 15px rgba(255, 88, 88, 0.4);
 }
 
 .btn-delete:hover {
-    background: linear-gradient(90deg, #f09819, #ff5858);
-    transform: scale(1.05);
-    box-shadow: 0 6px 25px rgba(255, 88, 88, 0.6);
+    background: linear-gradient(90deg, #ff5858, red);
 }
 
 .btn-details {
-    background-color: #fff;
-    color: black;
-    border: 2px solid white;
+    border: none;
     font-weight: 600;
     border-radius: 8px;
-    padding: 5px 15px;
-    transition: all 0.3s ease;
+    padding: 8px 20px;
+    transition: all 0.3s ease-in-out;
+    background: linear-gradient(90deg, #ff5858, #f09819);
+    color: #fff;
+    box-shadow: 0 2px 2px rgba(255, 88, 88, 0.4);
 }
 
 .btn-details:hover {
-    background-color: #fff;
-    color: black;
-    border: 2px solid white;
-    font-weight: 600;
-    border-radius: 8px;
-    padding: 5px 15px;
-    transition: all 0.3s ease;
+    background: linear-gradient(90deg, #f09819, #ff5858);
+    box-shadow: 0 6px 25px rgba(255, 88, 88, 0.6);
+    transform: scale(1.05);
+    color: #fff;
 }

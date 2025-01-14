@@ -19,7 +19,7 @@ const TaskItem = ({ task, onSelectTask, onDelete }) => {
             </div>
 
             <div id={collapseId} className="collapse">
-                <div className="card-body">
+                <div className="card-body bg-light">
                     <p><strong>Description:</strong> {task.description || 'No description provided.'}</p>
                     <p><strong>Priority:</strong> <span className={`badge ${task.priority === 'High' ? 'bg-danger' : task.priority === 'Medium' ? 'bg-warning text-dark' : 'bg-success'}`}>{task.priority}</span></p>
                     <p><strong>Status:</strong> <span className={`badge ${task.status === 'Done' ? 'bg-success' : 'bg-secondary'}`}>{task.status}</span></p>

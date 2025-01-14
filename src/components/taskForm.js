@@ -15,8 +15,18 @@ const TaskForm = ({ onTaskCreated, existingTask }) => {
             setDueDate(existingTask.dueDate ? existingTask.dueDate.split('T')[0] : '');
             setPriority(existingTask.priority);
             setStatus(existingTask.status);
+        } else {
+            resetForm();
         }
     }, [existingTask]);
+
+    const resetForm = () => {
+        setTitle('');
+        setDescription('');
+        setDueDate('');
+        setPriority('LOW');
+        setStatus('TO DO');
+    };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -29,12 +39,14 @@ const TaskForm = ({ onTaskCreated, existingTask }) => {
             status
         };
 
-        if (existingTask)
+        if (existingTask) {
             await updateTask(existingTask.id, taskData);
-        else
+        } else {
             await createTask(taskData);
+        }
 
         onTaskCreated();
+        resetForm();
     };
 
     return (
@@ -47,10 +59,13 @@ const TaskForm = ({ onTaskCreated, existingTask }) => {
                             type="button"
                             className="btn-close"
                             aria-label="Close"
-                            onClick={() => onTaskCreated()}
+                            onClick={() => {
+                                onTaskCreated();
+                                resetForm();
+                            }}
                         />
                     </div>
-                    <div className="modal-body">
+                    <div className="modal-body overflow-auto" style={{ maxHeight: '70vh' }}>
                         <form onSubmit={handleSubmit}>
                             <div className="row g-3">
                                 <div className="col-md-6">
