@@ -12,12 +12,14 @@ const TaskList = ({ onSelectTask, refreshTasks }) => {
     };
 
     useEffect(() => {
-        fetchTasks();
-    }, []);
+            fetchTasks();
+        },
+        []);
 
     useEffect(() => {
-        fetchTasks();
-    }, [refreshTasks]);
+            fetchTasks();
+        },
+        [refreshTasks]);
 
     const handleDelete = (id) => {
         deleteTask(id).then(() => {

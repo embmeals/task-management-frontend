@@ -47,12 +47,12 @@ body {
 }
 
 .glass-effect {
-    background: rgba(255, 255, 255, 0.2); 
+    background: rgba(255, 255, 255, 0.2);
     box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
-    backdrop-filter: blur(10px); 
-    -webkit-backdrop-filter: blur(10px); 
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     border-radius: 15px;
-    border: 1px solid rgba(255, 255, 255, 0.18); 
+    border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 .card {
@@ -95,13 +95,6 @@ body {
     font-weight: 600;
 }
 
-@media (min-width: 768px) {
-    .d-grid button {
-        width: auto;
-        margin-bottom: 0;
-    }
-}
-
 .badge {
     padding: 5px 10px;
     border-radius: 12px;
@@ -137,9 +130,7 @@ body {
     color: #fff;
 }
 
-.btn-delete:hover {
-    background: linear-gradient(90deg, #ff5858, red);
-}
+.btn-delete:hover { background: linear-gradient(90deg, #ff5858, red); }
 
 .btn-details {
     border: none;
@@ -179,6 +170,13 @@ body {
         width: 100%;
         text-align: center;
     }
+
+    .container { padding: 10px; }
 }
 
-.container { padding: 10px; }
+@media (min-width: 768px) {
+    .d-grid button {
+        width: auto;
+        margin-bottom: 0;
+    }
+}

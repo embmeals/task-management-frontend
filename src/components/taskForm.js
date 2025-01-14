@@ -9,16 +9,15 @@ const TaskForm = ({ onTaskCreated, existingTask }) => {
     const [status, setStatus] = useState('TO DO');
 
     useEffect(() => {
-        if (existingTask) {
-            setTitle(existingTask.title);
-            setDescription(existingTask.description);
-            setDueDate(existingTask.dueDate ? existingTask.dueDate.split('T')[0] : '');
-            setPriority(existingTask.priority);
-            setStatus(existingTask.status);
-        } else {
-            resetForm();
-        }
-    }, [existingTask]);
+            if (existingTask) {
+                setTitle(existingTask.title);
+                setDescription(existingTask.description);
+                setDueDate(existingTask.dueDate ? existingTask.dueDate.split('T')[0] : '');
+                setPriority(existingTask.priority);
+                setStatus(existingTask.status);
+            } else resetForm();
+        },
+        [existingTask]);
 
     const resetForm = () => {
         setTitle('');
@@ -39,11 +38,8 @@ const TaskForm = ({ onTaskCreated, existingTask }) => {
             status
         };
 
-        if (existingTask) {
-            await updateTask(existingTask.id, taskData);
-        } else {
-            await createTask(taskData);
-        }
+        if (existingTask) await updateTask(existingTask.id, taskData);
+        else await createTask(taskData);
 
         onTaskCreated();
         resetForm();
@@ -62,8 +58,7 @@ const TaskForm = ({ onTaskCreated, existingTask }) => {
                             onClick={() => {
                                 onTaskCreated();
                                 resetForm();
-                            }}
-                        />
+                            }} />
                     </div>
                     <div className="modal-body overflow-auto">
                         <form onSubmit={handleSubmit}>
@@ -77,8 +72,7 @@ const TaskForm = ({ onTaskCreated, existingTask }) => {
                                         placeholder="Enter task title"
                                         value={title}
                                         onChange={(e) => setTitle(e.target.value)}
-                                        required
-                                    />
+                                        required />
                                 </div>
 
                                 <div className="col-md-6">
@@ -131,7 +125,9 @@ const TaskForm = ({ onTaskCreated, existingTask }) => {
 
                             <div className="d-grid mt-4">
                                 <button type="submit" className="btn btn-success btn-lg">
-                                    {existingTask ? 'Update Task' : 'Add Task'}
+                                    {existingTask
+                                        ? 'Update Task'
+                                        : 'Add Task'}
                                 </button>
                             </div>
                         </form>

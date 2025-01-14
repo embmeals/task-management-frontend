@@ -5,10 +5,11 @@ const TaskDetail = ({ taskId }) => {
     const [task, setTask] = useState(null);
 
     useEffect(() => {
-        if (taskId)
-            getTaskById(taskId)
-                .then(response => setTask(response.data.data));
-    }, [taskId]);
+            if (taskId)
+                getTaskById(taskId)
+                    .then(response => setTask(response.data.data));
+        },
+        [taskId]);
 
     if (!task)
         return <div>Select a task to view details</div>;

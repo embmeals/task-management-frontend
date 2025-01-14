@@ -21,16 +21,17 @@ const App = () => {
     return (
         <div>
             <main className="container py-5">
-                <section className="d-flex justify-content-between align-items-center mb-4">
-                    <h1 className="text-dark fw-bold">Task Management</h1>
-                    <button className="btn btn-success btn-lg" onClick={() => setShowModal(true)}>
+                <section className="d-flex flex-wrap justify-content-between align-items-center mb-4">
+                    <h1 className="text-dark fw-bold mb-3 mb-md-0">Task Management</h1>
+                    <button className="btn btn-success btn-lg w-100 w-md-auto" onClick={() => setShowModal(true)}>
                         <i className="bi bi-plus-circle me-2"></i>Create Task
                     </button>
                 </section>
                 <TaskList onSelectTask={handleSelectTask} refreshTasks={refreshTasks} />
             </main>
 
-            {showModal && (
+            {showModal &&
+ (
                 <div className="modal fade show d-block" tabIndex="-1">
                     <div className="modal-dialog modal-dialog-centered">
                         <div className="modal-content">
