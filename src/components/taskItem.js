@@ -32,7 +32,7 @@ const TaskItem = ({ task, onSelectTask, onDelete }) => {
                                 ? 'bg-danger'
                                 : task?.priority === 'MEDIUM'
                                     ? 'bg-warning text-dark'
-                                    : 'bg-success'
+                                    : 'bg-primary'
                             }`}>{task?.priority}</span>
                     </p>
 
