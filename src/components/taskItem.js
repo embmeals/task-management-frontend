@@ -20,8 +20,14 @@ const TaskItem = ({ task, onSelectTask, onDelete }) => {
 
             <div id={collapseId} className="collapse">
                 <div className="card-body-custom">
-                    <p><strong>Description:</strong> {task.description || 'No description provided.'}</p>
-                    <p><strong>Priority:</strong>
+                    <p><strong>
+                        Description:
+                    </strong> {task.description || 'No description provided.'}
+                    </p>
+
+                    <p><strong>
+                        Priority:
+                    </strong>
                         <span className={`mx-2 badge ${task?.priority === 'HIGH'
                             ? 'bg-danger text-white'
                                 : task?.priority === 'MEDIUM'
@@ -30,7 +36,9 @@ const TaskItem = ({ task, onSelectTask, onDelete }) => {
                             }`}>{task?.priority}</span>
                     </p>
 
-                    <p><strong>Status:</strong>
+                    <p><strong>
+                        Status:
+                    </strong>
                         <span className={`mx-2 badge ${task?.status === 'DONE'
                             ? 'bg-success text-white'
                             : task?.status === 'IN PROGRESS'
@@ -38,16 +46,22 @@ const TaskItem = ({ task, onSelectTask, onDelete }) => {
                                     : 'bg-secondary text-white'
                             }`}>{task?.status}</span>
                     </p>
-                    <p><strong>Due Date:</strong> {task.dueDate
+
+                    <p><strong>
+                        Due Date:
+                    </strong> {task.dueDate
                         ? new Date(task.dueDate).toLocaleDateString()
-                        : 'No Due Date'}</p>
+                        : 'No Due Date'}
+                    </p>
 
                     <div className="d-flex gap-4">
                         <button onClick={() => onSelectTask(task)} className="btn btn-edit w-100">
-                            <i className="bi bi-pencil-square me-2"></i>Edit Task
+                            <i className="bi bi-pencil-square me-2"></i>
+                            Edit Task
                         </button>
                         <button onClick={() => onDelete(task.id)} className="btn btn-delete w-100">
-                            <i className="bi bi-trash me-2"></i>Delete
+                            <i className="bi bi-trash me-2"></i>
+                            Delete
                         </button>
                     </div>
                 </div>
