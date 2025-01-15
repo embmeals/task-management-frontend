@@ -30,9 +30,9 @@ const TaskItem = ({ task, onSelectTask, onDelete }) => {
                     </strong>
                         <span className={`mx-2 badge ${task?.priority === 'HIGH'
                             ? 'bg-danger text-white'
-                                : task?.priority === 'MEDIUM'
-                                    ? 'bg-warning text-dark'
-                                    : 'bg-primary text-white'
+                            : task?.priority === 'MEDIUM'
+                                ? 'bg-warning text-dark'
+                                : 'bg-primary text-white'
                             }`}>{task?.priority}</span>
                     </p>
 
@@ -42,8 +42,8 @@ const TaskItem = ({ task, onSelectTask, onDelete }) => {
                         <span className={`mx-2 badge ${task?.status === 'DONE'
                             ? 'bg-success text-white'
                             : task?.status === 'IN PROGRESS'
-                                    ? 'bg-warning text-dark'
-                                    : 'bg-secondary text-white'
+                                ? 'bg-warning text-dark'
+                                : 'bg-secondary text-white'
                             }`}>{task?.status}</span>
                     </p>
 
