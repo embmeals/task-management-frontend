@@ -11,16 +11,16 @@ const TaskForm = ({ onTaskCreated, existingTask }) => {
     const [status, setStatus] = useState('TO DO');
 
     useEffect(() => {
-        if (existingTask) {
-            setTitle(existingTask.title);
-            setDescription(existingTask.description);
-            setDueDate(existingTask.dueDate ? existingTask.dueDate.split('T')[0] : '');
-            setPriority(existingTask.priority);
-            setStatus(existingTask.status);
-        } else {
-            resetForm();
-        }
-    }, [existingTask]);
+            if (existingTask) {
+                setTitle(existingTask.title);
+                setDescription(existingTask.description);
+                setDueDate(existingTask.dueDate ? existingTask.dueDate.split('T')[0] : '');
+                setPriority(existingTask.priority);
+                setStatus(existingTask.status);
+            }
+            else resetForm();
+        },
+        [existingTask]);
 
     const resetForm = () => {
         setTitle('');
@@ -41,18 +41,17 @@ const TaskForm = ({ onTaskCreated, existingTask }) => {
             status
         };
 
-        if (existingTask) {
+        if (existingTask)
             updateTask(existingTask.id, taskData)
                 .then((response) => {
                     toast.success(response.data.message || 'Task updated successfully!');
-                    onTaskCreated(); 
+                    onTaskCreated();
                     resetForm();
                 })
                 .catch(() => {
                     toast.error('Failed to update the task.');
                 });
-        }
-        else {
+        else
             createTask(taskData)
                 .then((response) => {
                     toast.success(response.data.message || 'Task created successfully!');
@@ -62,7 +61,6 @@ const TaskForm = ({ onTaskCreated, existingTask }) => {
                 .catch(() => {
                     toast.error('Failed to create the task.');
                 });
-        }
     };
 
     return (
