@@ -3,15 +3,9 @@ import React from 'react';
 const TaskItem = ({ task, onSelectTask, onDelete }) => {
     const collapseId = `collapse-${task.id}`;
 
-    const priorityClassMap = {
-        High: 'bg-danger',
-        Medium: 'bg-warning text-dark',
-        Low: 'bg-success',
-    };
-
     return (
         <div className="card shadow-sm mb-4 border-0">
-            <div className="card-header bg-light d-flex justify-content-between align-items-center">
+            <div className="card-header text-dark d-flex justify-content-between align-items-center">
                 <h5>{task.title}</h5>
                 <button
                     className="btn btn-details btn-sm"
@@ -25,11 +19,11 @@ const TaskItem = ({ task, onSelectTask, onDelete }) => {
             </div>
 
             <div id={collapseId} className="collapse">
-                <div className="card-body bg-light">
+                <div className="card-body-custom">
                     <p><strong>Description:</strong> {task.description || 'No description provided.'}</p>
                     <p><strong>Priority:</strong>
                         <span className={`mx-2 badge ${task?.priority === 'HIGH'
-                                ? 'bg-danger'
+                            ? 'bg-danger text-white'
                                 : task?.priority === 'MEDIUM'
                                     ? 'bg-warning text-dark'
                                     : 'bg-primary'
@@ -38,17 +32,17 @@ const TaskItem = ({ task, onSelectTask, onDelete }) => {
 
                     <p><strong>Status:</strong>
                         <span className={`mx-2 badge ${task?.status === 'DONE'
-                            ? 'bg-success'
+                            ? 'bg-success text-white'
                             : task?.status === 'IN PROGRESS'
                                     ? 'bg-warning text-dark'
-                                    : 'bg-secondary'
+                                    : 'bg-secondary text-white'
                             }`}>{task?.status}</span>
                     </p>
                     <p><strong>Due Date:</strong> {task.dueDate
                         ? new Date(task.dueDate).toLocaleDateString()
                         : 'No Due Date'}</p>
 
-                    <div className="d-flex gap-2">
+                    <div className="d-flex gap-4">
                         <button onClick={() => onSelectTask(task)} className="btn btn-edit w-100">
                             <i className="bi bi-pencil-square me-2"></i>Edit Task
                         </button>
