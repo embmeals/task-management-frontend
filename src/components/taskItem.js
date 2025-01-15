@@ -26,7 +26,7 @@ const TaskItem = ({ task, onSelectTask, onDelete }) => {
                             ? 'bg-danger text-white'
                                 : task?.priority === 'MEDIUM'
                                     ? 'bg-warning text-dark'
-                                    : 'bg-primary'
+                                    : 'bg-primary text-white'
                             }`}>{task?.priority}</span>
                     </p>
 

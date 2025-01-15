@@ -12,6 +12,10 @@ body {
     overflow: auto;
 }
 
+.modal-title {
+    font-family: 'Orbitron', sans-serif;
+}
+
 .title-text {
     background: white;
     -webkit-background-clip: text;

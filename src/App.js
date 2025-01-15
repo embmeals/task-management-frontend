@@ -23,7 +23,9 @@ const App = () => {
         <div>
             <main className="container py-5">
                 <section className="d-flex justify-content-between align-items-center mb-4 flex-column flex-md-row text-center text-md-start">
-                    <h1 className="title-text fw-bold">Task Management</h1>
+                    <h1 className="title-text fw-bold">
+                        Task Management
+                    </h1>
                     <button
                         className="btn btn-create text-dark btn-lg mt-3 mt-md-0"
                         onClick={() => {
