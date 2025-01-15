@@ -68,7 +68,9 @@ const TaskForm = ({ onTaskCreated, existingTask }) => {
     return (
         <form onSubmit={handleSubmit}>
             <div className="mb-3">
-                <label htmlFor="title" className="form-label">Title</label>
+                <label htmlFor="title" className="form-label">
+                    Title
+                </label>
                 <input
                     id="title"
                     type="text"
@@ -80,7 +82,9 @@ const TaskForm = ({ onTaskCreated, existingTask }) => {
             </div>
 
             <div className="mb-3">
-                <label htmlFor="description" className="form-label">Description</label>
+                <label htmlFor="description" className="form-label">
+                    Description
+                </label>
                 <textarea
                     id="description"
                     className="form-control"
@@ -91,18 +95,21 @@ const TaskForm = ({ onTaskCreated, existingTask }) => {
             </div>
 
             <div className="mb-3">
-                <label htmlFor="dueDate" className="form-label">Due Date</label>
+                <label htmlFor="dueDate" className="form-label">
+                    Due Date
+                </label>
                 <input
                     id="dueDate"
                     type="date"
                     className="form-control"
                     value={dueDate}
-                    onChange={(e) => setDueDate(e.target.value)}
-                />
+                    onChange={(e) => setDueDate(e.target.value)} />
             </div>
 
             <div className="mb-3">
-                <label htmlFor="priority" className="form-label">Priority</label>
+                <label htmlFor="priority" className="form-label">
+                    Priority
+                </label>
                 <select
                     id="priority"
                     className="form-select"
@@ -115,13 +122,14 @@ const TaskForm = ({ onTaskCreated, existingTask }) => {
             </div>
 
             <div className="mb-3">
-                <label htmlFor="status" className="form-label">Status</label>
+                <label htmlFor="status" className="form-label">
+                    Status
+                </label>
                 <select
                     id="status"
                     className="form-select"
                     value={status}
-                    onChange={(e) => setStatus(e.target.value)}
-                >
+                    onChange={(e) => setStatus(e.target.value)}>
                     <option value="TO DO">To Do</option>
                     <option value="IN PROGRESS">In Progress</option>
                     <option value="DONE">Done</option>
@@ -130,7 +138,9 @@ const TaskForm = ({ onTaskCreated, existingTask }) => {
 
             <div className="d-grid">
                 <button type="submit" className="btn btn-success btn-lg">
-                    {existingTask ? 'Update Task' : 'Add Task'}
+                    {existingTask
+                        ? 'Update Task'
+                        : 'Add Task'}
                 </button>
             </div>
         </form>
