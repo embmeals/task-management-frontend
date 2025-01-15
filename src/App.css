@@ -140,5 +140,5 @@ body {
 }
 
 @media (max-width: 576px) {
-    .btn { width: 100%; }
+    .btn-create { width: 100%; }
 }
